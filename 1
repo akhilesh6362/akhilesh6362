@@ -1,0 +1,96 @@
+ Step 2 Configure Git
+ Set your username and email (these will appear in your commits):
+ git config --global user.name "Your Name"
+ git config --global user.email "your.email@example.com"
+
+Step 3 Generate SSH Key and Link with GitHub
+ Generate SSH Key:
+ ssh-keygen -t rsa -b 4096 -C "your.email@example.com"
+ 
+Follow prompts, then copy your public key:
+ cat ~/.ssh/id_ed25519.pub
+
+ Add Key to GitHub:
+ Go to GitHub 
+→
+ Settings 
+→
+ SSH and GPG keys 
+→
+ New SSH key.
+ Paste your public key and save.
+ Test Connection:
+ ssh -T git@github.com
+ Task 2 Create a Repository & Basic Git Commands
+ Step 1 Create a Repository on GitHub
+ Go to GitHub 
+→
+ New repository 
+→
+ Name it (e.g., 
+Step 2 Initialize Local Repo and Link
+ my-project
+ ) 
+→
+ 
+
+Step 2 Initialize Local Repo and Link
+ my-project
+ ) 
+→
+ Create.
+ git clone git@github.com:yourusername/my-project.git
+ cd my-project
+ 
+
+# OR, if starting from scratch:
+ git init
+ git remote add origin git@github.com:yourusername/my-project.git
+ 
+Step 3 Basic Git Commands
+ Add files:
+ git add filename.txt
+
+ Commit changes:
+ git commit -m "Add initial file"
+
+ Push to GitHub:
+ git push origin main
+
+ Pull latest changes:
+git pull origin main
+
+ Clone a repo:
+ git clone git@github.com:yourusername/my-project.git
+ 
+
+Task 3 Version Control Strategies
+ Branching
+ Create a new branch:
+ git checkout -b feature-branch
+ 
+Switch branches:
+ git checkout main
+
+ Merging
+ Merge a branch into main:
+ git checkout main
+ git merge branch name
+
+ Resolving Conflicts
+ If you see a conflict after merging, open the conflicted file, edit to resolve, then:
+ git add conflicted-file.txt
+ git commit
+
+
+ Task 4 Release Management & Documentation
+ Tagging Releases
+ Create a tag:
+ git tag v1.0.0
+ git push origin v1.0.0
+ List tags:
+ git tag
+Viewing Logs & Documenting Changes
+ View commit history:
+ git log
+ Show changes for a specific tag
